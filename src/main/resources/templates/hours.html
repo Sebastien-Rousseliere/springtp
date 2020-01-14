@@ -1,0 +1,8 @@
+<html>
+<head><title>${appHours}</title></head>
+<body>
+<h1>Aujourd'hui</h1>
+<p>Nous sommes le <span th:text="${#temporals.formatISO(localDateTime)}">date du jour</span></p>
+<p>Nous sommes le <span th:text="${#temporals.format(localDateTime,'dd/MM/YYYY')}">date du jour</span></p>
+</body>
+</html>
