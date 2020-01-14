@@ -4,5 +4,12 @@
 <h1>Aujourd'hui</h1>
 <p>Nous sommes le <span th:text="${#temporals.formatISO(localDateTime)}">date du jour</span></p>
 <p>Nous sommes le <span th:text="${#temporals.format(localDateTime,'dd/MM/YYYY')}">date du jour</span></p>
+<p>Nous sommes donc <span th:text="${#temporals.dayOfWeekName(localDateTime)=='SAMEDI'||#temporals.dayOfWeekName(localDateTime)=='DIMANCHE'? 'En Week-End !' : 'Au boulot !'}"></span></p>
+<td th:switch="${#temporals.month(localDateTime)}">
+<span th:case="'1'">C'est l'hiver</span>
+<span th:case="'2'">C'est l'hiver aussi</span>
+
+</td>
+
 </body>
 </html>

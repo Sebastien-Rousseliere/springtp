@@ -1,6 +1,8 @@
 package com.example.springboot;
 
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -13,8 +15,7 @@ public class SimpleController {
 	@Value("${spring.application.name}")
 
 		String appName;
-		
-
+	
 	@GetMapping("/")
 
 	public String homePage(Model model) {
@@ -25,7 +26,10 @@ public class SimpleController {
 	@GetMapping("/time")
 	public String hoursPage(Model model) {
 		model.addAttribute("localDateTime", LocalDateTime.now());
+		
 		return "hours";
 	}
+	
+	
 	
 }
